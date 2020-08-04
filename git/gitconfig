@@ -1,22 +1,8 @@
 [user]
-	name = Georgii Staroselskii
-	email = georgii.staroselskii@emlid.com
-[alias]
-    lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    unstage = reset HEAD
-    st = status -sb
-    undo = checkout --
-    subupdate = submodule update --init --recursive
-    cpick = cherry-pick
-    branchdate =  ! ~/.git/helpers/git-branchdate-helper
-
-[merge]
-	tool = vimdiff
-	ff = only
-	conflictstyle = diff3
-[core]
-	excludesfile = ~/.gitignore
+	name = Nikita Efremov
+	email = nikita.efremov@emlid.com
+	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	unstage = reset HEAD
+	subupdate = submodule update --init --recursive
 [color]
-	ui = auto
-[gpg]
-	program = gpg2
+		ui = auto

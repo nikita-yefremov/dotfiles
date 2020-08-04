@@ -1,69 +1,44 @@
-filetype off
-set nocompatible
+filetype off                  " required
 
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'henrik/vim-indexed-search'
-"Plugin 'lyuts/vim-rtags'
-Plugin 'kopischke/vim-fetch'
-Plugin 'tmux-plugins/vim-tmux'
-Plugin 'gnattishness/cscope_maps'
-Plugin 'kergoth/vim-bitbake'
-Plugin 'rlue/vim-barbaric'
-Plugin 'mhinz/vim-signify'
-Plugin 'edkolev/tmuxline.vim'
-let g:tmuxline_powerline_separators = 0
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-call vundle#end()
-filetype plugin indent on
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
-" global preferences "
-colorscheme torte
-set nu
-set t_Co=256
-set mouse=a 
-set termencoding=utf-8 
-set clipboard=unnamedplus
-set clipboard=unnamed
+" add all your plugins here (note older versions of Vundle
+" used Bundle instead of Plugin)
 
-" Remember info about open buffers on close
-set viminfo^=%
+" ...
 
-" Backup
-set undofile      
-set noswapfile
-set nobackup
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" Enable folding
+set foldmethod=indent |
+set foldlevel=99
 
-" Sounds
-set noerrorbells
-set novisualbell
+" Enable folding with the spacebar
+nnoremap <space> za
 
-" search 
-set smartcase
-set ignorecase
-set incsearch
-set showmatch
 
-" indention
-set smartindent
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
 
-" highlighting
+
+" Autocompletion
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+
+
+" Plugins List
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Bundle 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+let python_highlight_all=1
 syntax on
-set relativenumber
-set hlsearch
-
-filetype indent on
-
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set laststatus=2
-
-set updatetime=100
